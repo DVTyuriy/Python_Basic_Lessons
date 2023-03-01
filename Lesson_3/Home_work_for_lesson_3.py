@@ -1,29 +1,40 @@
-input_text = input('Введите любой текст, где есть пробелы, запятые и много разного), не скупитесь на знаки .,-:;?!) \n') # ввод предложения для обработки
-# input_text = 'HelLo,.- mY nAmE iS: YuRii;! I. aM PrograMMing on C++) WhAt abOuT yoU? :)  ' # строка для теста, нужно просто раскоментить 3 строки, это первая
+# ввод предложения для обработки
+input_text = input('Введите любой текст, где есть пробелы, запятые и много разного), не скупитесь на знаки .,-:;?!) \n')
 
-input_text_ed = input_text.lower() # превращение предложения в нижний регистр
-input_text_ed = input_text_ed.replace('.', '') # Удаление точек в предложении
-input_text_ed = input_text_ed.replace(',', '') # Удаление запятых в предложении
-input_text_ed = input_text_ed.replace(')', '') # Удаление скобок в предложении
-input_text_ed = input_text_ed.replace('-', '') # Удаление тире в предложении
-input_text_ed = input_text_ed.replace(':', '') # Удаление двоеточия в предложении
-input_text_ed = input_text_ed.replace(';', '') # Удаление точек с запятыми в предложении
-input_text_ed = input_text_ed.replace('?', '') # Удаление знаков вопроса в предложении
-input_text_ed = input_text_ed.replace('!', '') # Удаление знаков восклицания в предложении
+# строка для теста, нужно просто раскоментить 3 строки, это первая
+# input_text = 'HelLo, mY nAmE iS KyRyLo! I aM PrograMMing on C++) WhAt abOuT yoU? :)'
 
-find_word = input('Какое слово хотите заменить?\n') # какое слово надо заменить
+# какое слово надо заменить
+find_word = input('Какое слово хотите заменить?\n')
 
-#find_word = 'C++' # строка для теста, нужно просто раскоментить, это вторая
+# строка для теста, нужно просто раскоментить, это вторая
+# find_word = 'C++'
 
-print(f'Ваше слово {find_word} находится на позиции: {input_text.find(find_word)}!') # вывод позиции слова в первоначальной формулировке
+# вывод позиции слова в первоначальной формулировке
+print(f'Ваше слово {find_word} находится на позиции: {input_text.find(find_word)}!')
 
-find_word_ed = find_word.lower() # это нужно, чтобы менять слово уже в измененном тексте
+# на какое слово хотите заменить
+rep_word = input('На какое слово хотите заменить?\n')
 
-rep_word = input('На какое слово хотите заменить?\n') # на какое слово хотите заменить
+# строка для теста, нужно просто раскоментить, это крайняя
+# rep_word = 'Python'
 
-# rep_word = 'Python' # для теста # строка для теста, нужно просто раскоментить, это крайняя
+# выполняется замена слова
+final_text = input_text.replace(find_word, rep_word)
 
-final_text = input_text_ed.replace(find_word_ed, rep_word) # выполняется замена слова
+# Удаление знаков .,)-:;?! в предложении
+final_text = final_text.replace('.', '')
+final_text = final_text.replace(',', '')
+final_text = final_text.replace(')', '')
+final_text = final_text.replace('-', '')
+final_text = final_text.replace(':', '')
+final_text = final_text.replace(';', '')
+final_text = final_text.replace('?', '')
+final_text = final_text.replace('!', '')
 
-print(f'Мы получили вот такой результат:') # вывод результата
-print(final_text.rstrip()) # вывод результата с удалением справа пробелов
+# превращение предложения в нижний регистр
+final_text = final_text.lower()
+
+# уведомления пользователя о выводе
+print('Мы получили вот такой результат:')
+print(final_text.rstrip())
