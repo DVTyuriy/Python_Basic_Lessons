@@ -45,10 +45,10 @@ while True:
     elif Enter_word.find('надобраніч') >= 0:
         print(ans_3)
         break
-    elif Enter_word.find('Гудбай') >= 0:
+    elif Enter_word.find('гудбай') >= 0:
         print(ans_3)
         break
-    elif Enter_word.find('До зустрічі') >= 0:
+    elif Enter_word.find('до зустрічі') >= 0:
         print(ans_3)
         break
     else:
