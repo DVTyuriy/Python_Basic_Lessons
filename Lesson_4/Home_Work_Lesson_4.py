@@ -19,11 +19,10 @@ ans_1 = 'Вчусь програмувати на Python!'
 ans_2 = 'Соррі що втручуюсь, не знаю про що йдеться мова, але подивіться серіал "Американські боги", він просто бомба!'
 ans_3 = "Побачимось у мережі, I'll be back."
 
-# цикл обробки відпопідей
+# цикл обробки відповідей
 while True:
     Enter_word = input().lower()
-
-    # пошук в відповіді ключових слів
+    # пошук в відповіді ключових слів блок 1
     if Enter_word.find('як справи?') >= 0:
         print(ans_1)
     elif Enter_word.find('що робиш?') >= 0:
@@ -32,14 +31,14 @@ while True:
         print(ans_1)
     elif Enter_word.find('чим зайнятий?') >= 0:
         print(ans_1)
-
+    # пошук в відповіді ключових слів блок 2
     elif Enter_word.find('серіал') >= 0:
         print(ans_2)
     elif Enter_word.find('фільм') >= 0:
         print(ans_2)
     elif Enter_word.find('кіно') >= 0:
         print(ans_2)
-
+    # пошук в відповіді ключових слів блок 3
     elif Enter_word.find('бувай') >= 0:
         print(ans_3)
         break
