@@ -23,13 +23,7 @@ ans_3 = "Побачимось у мережі, I'll be back."
 while True:
     Enter_word = input().lower()
     # пошук в відповіді ключових слів блок 1
-    if Enter_word.find('як справи?') >= 0:
-        print(ans_1)
-    elif Enter_word.find('що робиш?') >= 0:
-        print(ans_1)
-    elif Enter_word.find('чим займаєшся?') >= 0:
-        print(ans_1)
-    elif Enter_word.find('чим зайнятий?') >= 0:
+    if 'як справи?' in Enter_word or 'що робиш?' in Enter_word or 'чим займаєшся?' in Enter_word or 'чим зайнятий?' in Enter_word:
         print(ans_1)
     # пошук в відповіді ключових слів блок 2
     elif Enter_word.find('серіал') >= 0:
