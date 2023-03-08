@@ -13,7 +13,8 @@ while True:
     # перевіряємо на правильність вводу, та сумуємо числа
     try:
         float(Enter_num)
-        Sum_num = Sum_num + float(Enter_num)
+        Sum_num += float(Enter_num)
         i += 1
+        # якщо не число, то повідомляємо про помилку
     except Exception:
         print('Ох, дідько, щось я перестав тебе розуміти, давай знову спробуємо')
