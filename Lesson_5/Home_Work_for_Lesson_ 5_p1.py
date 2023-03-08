@@ -15,6 +15,7 @@ while True:
         float(Enter_num)
         Sum_num += float(Enter_num)
         i += 1
+        print('Число додано до обчислювання')
         # якщо не число, то повідомляємо про помилку
     except Exception:
         print('Ох, дідько, щось я перестав тебе розуміти, давай знову спробуємо')
