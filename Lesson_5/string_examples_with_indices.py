@@ -34,3 +34,4 @@ print()
 
 for word in text_words:
     print(word, end=' ')
+
