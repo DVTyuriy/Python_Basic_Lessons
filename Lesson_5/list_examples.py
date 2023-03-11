@@ -32,6 +32,7 @@ print(y + x)
 
 # sim_card1_contact_list.extend(sim_card2_contact_list)
 # x = x + y  # идентично x.extend(y)
+print('-----------------------------------')
 x.extend(y)
 print(x)
 
