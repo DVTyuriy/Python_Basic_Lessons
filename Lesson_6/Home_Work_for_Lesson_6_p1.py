@@ -25,7 +25,7 @@ list_unit = "".join(list_unit).lower()
 back_list_unit = "".join(back_list_unit).lower()
 
 # порівнюємо два набіра символів, та виводимо результат
-if list_unit in back_list_unit:
+if list_unit == back_list_unit:
     print('Мої вітання, таки введене являється паліндромом')
 else:
     print('Мені дуже прикро, але це не є паліндромом')
