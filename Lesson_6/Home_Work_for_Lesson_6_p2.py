@@ -3,7 +3,7 @@ input_word = input('Введіть текст, в якому потрібно в
                    'або введіть "1" для перевірки фрази за замовчуванням\n')
 if input_word == '1':
     input_word = 'Я не знав куди йти (втім не дивно), ' \
-                 'тому пішов.. "вийде" Я не знав куди йти, тому (втімнедивно), пішов..'
+                 'тому пішов.. "вийде)" Я не знав куди йти, тому (втімнедивно), пішов..'
     print(f'Ось фраза, яка буде перевірена:\n{input_word}')
 print()
 
@@ -32,7 +32,8 @@ for i in range(lenth_input):
     elif '(' in text_words[i]:
         a = i
         res_word_a.append(a)
-    elif ')' in text_words[i]:
+    # доповнена перевірка на смайл)
+    elif ')' in text_words[i] and a > b:
         b = i + 1
         res_word_b.append(b)
 
