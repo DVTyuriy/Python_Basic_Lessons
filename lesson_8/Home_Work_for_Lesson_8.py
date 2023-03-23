@@ -45,17 +45,29 @@ def longest_short(longest_tuple: tuple, rev: bool, comment):
     printed_for(longest_list, comment)
 
 
-def printed_for(input_list: list, comment: str):
+def printed_for(input_list_print: list, comment: str):
     """
     Функія, яка виводить на екран список построково
-    :param input_list: вхідний список
+    :param input_list_print: вхідний список
     :param comment: Пояснення до інформації, яку ми виводимо
     :return: функція нічого не повертає, а лише виводить на екран інформацію зі списку
     """
+    n = input_num()
+    if n > len(input_list_print):
+        n = len(input_list_print)
     print(comment)
-    for i in range(len(input_list)):
-        print(input_list[i])
+    for i in range(n):
+        print(input_list_print[i])
     print('=' * 10, 'New operation', '=' * 10)
+
+
+def input_num() -> int:
+    while True:
+        try:
+            k = int(input('Скільки нотатків ви хочете побачити: '))
+            return k
+        except Exception:
+            print('Трясся, я не можу сприйняти це як число')
 
 
 def print_ln():
