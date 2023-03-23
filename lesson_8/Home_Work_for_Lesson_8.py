@@ -52,6 +52,7 @@ def printed_for(input_list_print: list, comment: str):
     :param comment: Пояснення до інформації, яку ми виводимо
     :return: функція нічого не повертає, а лише виводить на екран інформацію зі списку
     """
+
     n = input_num()
     if n > len(input_list_print):
         n = len(input_list_print)
@@ -62,6 +63,10 @@ def printed_for(input_list_print: list, comment: str):
 
 
 def input_num() -> int:
+    """
+    Функція для зчитування кількості необхідних рядків для виведеня на екран
+    :return: кількість рядків
+    """
     while True:
         try:
             k = int(input('Скільки нотатків ви хочете побачити: '))
