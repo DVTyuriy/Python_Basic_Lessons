@@ -1,49 +1,99 @@
-def printed_for(input_list: list, comment: str):
+COMMAND = [
+    'Введіть:',
+    'add -      для збереження в нотатки',
+    'earliest - щоб вивести нотатки на экран від найранішої до найпізнішої:',
+    'latest -   щоб вивести нотатки на экран від найпізнішої до найранішої:',
+    'longest -  щоб вивести нотатки на экран від найдовшої до найкоротшої:',
+    'shortest - щоб вивести нотатки на экран від найкоротшої до найдовшої:',
+    'exit -     для завершення'
+]
 
-    print(comment)
-    for i in range(len(input_list)):
-        print(input_list[i])
-    print('=' * 10, 'New operation', '=' * 10)
-    input_list = list()
+
+def earliest(earliest_tuple: tuple, comment: str):
+    """
+    Функція, яка перетворює кортеж на список та передає список на виведення на екран
+    :param earliest_tuple: вхідні дані кортеж
+    :param comment: коментарій, який потрібний при виведені на екран
+    :return: функція нічого не повертає, а лише викликає другу функцію
+    """
+    earliest_list = list(earliest_tuple)
+    printed_for(earliest_list, comment)
 
 
 def latest(latest_tuple: tuple, comment: str):
+    """
+    Функція, яка перетворює кортеж на список і робить його в обратному порядку та передає список на виведення на екран
+    :param latest_tuple: вхідні дані кортеж
+    :param comment: коментарій, який потрібний при виведені на екран
+    :return: функція нічого не повертає, а лише викликає другу функцію
+    """
     latest_list = list(latest_tuple)
     latest_list.reverse()
     printed_for(latest_list, comment)
 
 
 def longest_short(longest_tuple: tuple, rev: bool, comment):
+    """
+    Функція, яка перетворює кортеж на список і сортує за дліною єлемента та передає список на виведення на екран
+    :param longest_tuple: вхідні дані кортеж
+    :param comment: коментарій, який потрібний при виведені на екран
+    :param rev: булька, яка вказує в якому напрямку буде зроблене сортування
+    :return: функція нічого не повертає, а лише викликає другу функцію
+    """
     longest_list = list(longest_tuple)
     longest_list.sort(key=len, reverse=rev)
     printed_for(longest_list, comment)
 
 
+def printed_for(input_list: list, comment: str):
+    """
+    Функія, яка виводить на екран список построково
+    :param input_list: вхідний список
+    :param comment: Пояснення до інформації, яку ми виводимо
+    :return: функція нічого не повертає, а лише виводить на екран інформацію зі списку
+    """
+    print(comment)
+    for i in range(len(input_list)):
+        print(input_list[i])
+    print('=' * 10, 'New operation', '=' * 10)
+
+
+def print_ln():
+    """
+    Функція для виведення на екран команд для взаємодії
+    :return: функція нічого не повертає, а лише виводить на екран інформацію зі списку
+    """
+    for j in range(len(COMMAND)):
+        print(COMMAND[j])
+
+
 if __name__ == '__main__':
-    # об`являємо змінну як список
+    # об`являємо змінні
     contain_tuple = tuple()
     contain_list = list()
     while True:
         # інпут нотатків від юзера, або команди на обробку нотатків
-        input_word = input('Введіть \n'
-                             'add -      для збереження в нотатки\n'
-                             'earliest - щоб вивести нотатки на экран від найранішої до найпізнішої:\n'
-                             'latest -   щоб вивести нотатки на экран від найпізнішої до найранішої:\n'
-                             'longest -  щоб вивести нотатки на экран від найдовшої до найкоротшої:\n'
-                             'shortest - щоб вивести нотатки на экран від найкоротшої до найдовшої:\n'
-                             'exit -     для завершення\n'
-                             )
-        # вже набитий список для перевірки
-        # contain_list = ['this is note', 'this is notissimo', 'note', 'this is a huge long, insanely long note',
-        #                 'well, anyways']
+        print_ln()
+        input_word = input()
 
-        # перевірка, якщо юзер хоче вийти
-        if input_word.lower() == 'exit':
-            exit()
+        # Якщо було введено 'add', то додаємо наступний введений текст до нотатків
+        if input_word == 'add':
+            print('Введіть текст для додавання в нотатки')
+            input_list = input()
+            # якщо нічого не було введено, нічого не додаємо до нотатків
+            if input_list == '':
+                print('Ви нічого не ввели, а ми нічого не записали:)')
+                print()
+            else:
+                # Додаємо інформацію в список, а список перетворюємо на кортеж
+                contain_list.append(input_list)
+                contain_tuple = tuple(contain_list)
+                print('Так, це ми записали до нотатків')
+                print()
 
         # перевірка, якщо юзер хоче відсортувати від найранішої до найпізнішої
-        if input_word.lower() == 'earliest':
-            printed_for(contain_tuple, 'Від найранішої до найпізнішої:')
+        elif input_word.lower() == 'earliest':
+            earliest(contain_tuple, 'Від найранішої до найпізнішої:')
 
         # перевірка, якщо юзер хоче відсортувати від найпізнішої до найранішої
         elif input_word.lower() == 'latest':
@@ -51,7 +101,6 @@ if __name__ == '__main__':
 
         # перевірка, якщо юзер хоче відсортувати від найдовшої до найкоротшої
         elif input_word.lower() == 'longest':
-            # показуємо, що ми хочемо сортувати в залежності від довжини елемента списку та в зворотньому напрямку
             longest_short(contain_tuple, True, 'Від найдовшої до найкоротшої:')
 
         # перевірка, якщо юзер хоче відсортувати від найкоротшої до найдовшої
@@ -59,14 +108,11 @@ if __name__ == '__main__':
             # показуємо, що ми хочемо сортувати в залежності від довжини елемента списку
             longest_short(contain_tuple, False, 'Від найкоротшої до найдовшої:')
 
-        # перевірка, якщо юзер не ввів нічого
-        elif input_word == '':
-            print('Ви нічого не ввели, а ми нічого і не записали')
-            print()
+        # перевірка, якщо юзер хоче вийти
+        elif input_word.lower() == 'exit':
+            exit()
 
-        # Якщо нічого не підійшло, то додаємо введений текст до нотатків
-        elif input_word == 'add':
-            input_list = input()
-            contain_list.append(input_list)
-            contain_tuple = tuple(contain_list)
-            print('Так, це ми записали до нотатків')
+        # перевірка, якщо юзер ввів не команду
+        else:
+            print('Нічого не зрозуміло, але дуже цікаво. Введіть команду для для виконання необхідних дії')
+            print()
