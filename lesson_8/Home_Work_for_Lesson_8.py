@@ -52,7 +52,6 @@ def printed_for(input_list_print: list, comment: str):
     :param comment: Пояснення до інформації, яку ми виводимо
     :return: функція нічого не повертає, а лише виводить на екран інформацію зі списку
     """
-
     n = input_num()
     if n > len(input_list_print):
         n = len(input_list_print)
@@ -89,8 +88,9 @@ if __name__ == '__main__':
     contain_tuple = tuple()
     contain_list = list()
     while True:
-        # інпут нотатків від юзера, або команди на обробку нотатків
+        # виводимо інфу для взаємодії с користувачем
         print_ln()
+        # інпут нотатків від юзера, або команди на обробку нотатків
         input_word = input()
 
         # Якщо було введено 'add', то додаємо наступний введений текст до нотатків
