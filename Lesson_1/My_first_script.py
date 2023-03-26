@@ -1,11 +1,15 @@
 """
-This is Python
+This is python file
 """
-# print  - команда для вывода информации в консоль
-print('My first commit')
+# print - команда для вывода информации в консоль
+print(5 + 5)
+print(5 / 2)
+print('Hello World!')
+print("Hello World!")
+print("Hello World!")
 
 # input - команда для получения ввода пользователя из консоли
-name = input('What is your name? ')
+name = input("WHat is your name? ")
 
-# f - format, форматируемая стока, которая дает возможность в себя включать переменную
+# f - format, форматируемая строка, позволяет включать в себя значения переменных
 print(f'Hello {name}!')
