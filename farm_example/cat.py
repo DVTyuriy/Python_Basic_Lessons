@@ -1,7 +1,7 @@
 from animal import Animal
 
 
-class Cow(Animal):
+class Cat(Animal):
     # конструктор класа або метода ініціалізації
     def __init__(self, name: str, preferred_food: set, age: int):
         """
@@ -12,10 +12,10 @@ class Cow(Animal):
         """
         super().__init__(name, preferred_food, age)
         # Переопреділяємо параметр
-        self.say_word = "Му-у-у!"
-        self.animal_type = "Корова"
+        self.say_word = "Мяу"
+        self.animal_type = "Кішка"
 
     # Функція догляду для цього класу
     def treat(self, hours: int = 1) -> str:
-        print(f"Вы ухаживаете за {self.name} {hours} часов.")
-        return "Молоко"
+        print(f"Ви доглядали за {self.name} {hours} годин.")
+        return "Ніжність"
