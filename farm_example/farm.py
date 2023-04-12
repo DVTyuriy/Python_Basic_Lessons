@@ -36,7 +36,9 @@ if __name__ == '__main__':
             animal.eat(food)
             what_we_lost.append(food)
         what_we_get.append(animal.treat(randint(0, 5)))
+    print()
     # Додаємо обекти
+    farm_animals.append(a)
     farm_animals.append('Оса')
     farm_animals.append(5)
     farm_animals.append([3, 4, 'Шершень'])
@@ -60,6 +62,6 @@ if __name__ == '__main__':
     print(f'Ухаживая за животными, мы получили: {what_we_get}')
     # виводимо на екран які тварини стали ситі, а які голодні
     if hungrys:
-        print(f'\n\n{len(hungrys)} тварин залишилось голодними')
+        print(f'\n{len(hungrys)} тварин залишилось голодними')
         print('Ось вони, бешкетники:', ', '.join([Animal.name for Animal in hungrys]), 'які голодні')
-        print('А ось довольні морди', ', '.join([Animal.name for Animal in not_hungrys]), 'які наїлися')
+        print('А ось довольні морди:', ', '.join([Animal.name for Animal in not_hungrys]), 'які наїлися')
