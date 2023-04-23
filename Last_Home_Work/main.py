@@ -14,7 +14,7 @@ def open_list_files() -> list:
 if __name__ == '__main__':
     # зчитування списку файлів
     f_list = open_list_files()
-    # відкриття файлів та додавання всих файлів до одного файлу
+    # відкриття файлів та додавання всіх файлів до одного файлу
     f_list1 = FileProcessor.append_f(f_list)
     # індексація даних по параметру
     index_sku = FileProcessor.index_tab(f_list1, 'sku')
