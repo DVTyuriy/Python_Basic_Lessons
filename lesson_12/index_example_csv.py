@@ -10,6 +10,7 @@ def create_index(my_data: list, column_name: str) -> dict:
     :return: индекс
     """
     my_index = dict()
+    print(my_data)
     for data_entry in my_data:
         if data_entry[column_name] not in my_index:
             my_index[data_entry[column_name]] = list()
@@ -51,6 +52,7 @@ if __name__ == '__main__':
         print(row)
 
     print('=' * 20, '\nAGE INDEX\n', '=' * 20)
+    print(data)
     age_index = create_index(data, 'age')
     display_index(age_index)
     display_index(index_group_populations(age_index))

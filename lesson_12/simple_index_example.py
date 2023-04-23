@@ -7,6 +7,7 @@ if __name__ == '__main__':
     d = json.load(open('children.json', 'r'))
     print(d)
     children_data = d['children']
+    print(children_data)
     # ключами индекса по колонке возраст будут значения возрастов
     age_index = dict()
     for children in children_data:
