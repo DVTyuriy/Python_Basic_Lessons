@@ -19,12 +19,8 @@ class FileProcessor:
         self.operation_cost = operation_cost
         self.comment = comment
 
-    def __str__(self):
-        return self.date, self.time, self.sku, self.warehouse, self.warehouse_cell_id, self.operation, \
-            self.invoice, self.expiration_date, self.operation_cost, self.comment
-
     @staticmethod
-    def append_f(list1) -> list:
+    def append_f(list1: list) -> list:
         """
         Функція відкриття файлів, та додаємо зміст файлів до списку
         :param list1: список файлів
@@ -43,23 +39,23 @@ class FileProcessor:
         return list_full
 
     @staticmethod
-    def index_tab(list1, comment: str) -> dict:
+    def index_tab(list1: list, comment1: str) -> dict:
         """
         Фунція індексації даних
         :param list1: список, який потрібно обробити
-        :param comment: параметр для індексації
+        :param comment1: параметр для індексації
         :return: словних індексованих данних по параметру
         """
         i_index = dict()
         for row in list1:
             for ind in row:
-                if ind[comment] not in i_index:
-                    i_index[ind[comment]] = list()
-                i_index[ind[comment]].append(ind)
+                if ind[comment1] not in i_index:
+                    i_index[ind[comment1]] = list()
+                i_index[ind[comment1]].append(ind)
         return i_index
 
     @staticmethod
-    def sale(list1) -> float:
+    def sale(list1: list) -> float:
         """
         Фунція. яка рахує вартість всіх успіхних операцій
         :param list1: список всїх операцій
@@ -73,7 +69,7 @@ class FileProcessor:
         return i_index
 
     @staticmethod
-    def expire_date(list1) -> int:
+    def expire_date(list1: list) -> int:
         """
          Фунція. яка рахує, скільки унікальних SKU було втрачено
         :param list1: список всїх операцій
@@ -89,7 +85,7 @@ class FileProcessor:
         return ind_sku
 
     @staticmethod
-    def how_to_warehouse(list1) -> dict:
+    def how_to_warehouse(list1: list) -> dict:
         """
         Фунція. яка рахує, скільки товарів "пройшло" через кожний склад
         :param list1: список всїх операцій
@@ -105,7 +101,7 @@ class FileProcessor:
         return population
 
     @staticmethod
-    def how_to(list1, text: str) -> dict:
+    def how_to(list1: list, text: str) -> dict:
         """
         Фунція. яка рахує кількість товарів, в залежності від операції
         :param list1: список всїх операцій
